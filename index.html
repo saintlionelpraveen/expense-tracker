@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker - Glass UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="container">
+        <header class="glass-card">
+            <h1>💰 Expense Tracker</h1>
+            <div class="balance-section">
+                <div class="balance-item">
+                    <p class="label">Total Balance</p>
+                    <h2 id="totalBalance" class="amount">$0.00</h2>
+                </div>
+                <div class="balance-grid">
+                    <div class="balance-item income">
+                        <p class="label">Income</p>
+                        <h3 id="totalIncome" class="amount">$0.00</h3>
+                    </div>
+                    <div class="balance-item expense">
+                        <p class="label">Expenses</p>
+                        <h3 id="totalExpense" class="amount">$0.00</h3>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-grid">
+            <section class="glass-card form-section">
+                <h2>Add Transaction</h2>
+                <form id="transactionForm">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" id="description" placeholder="e.g., Grocery shopping" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" placeholder="0.00" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="food">🍔 Food</option>
+                            <option value="transport">🚗 Transport</option>
+                            <option value="entertainment">🎮 Entertainment</option>
+                            <option value="shopping">🛍️ Shopping</option>
+                            <option value="bills">💳 Bills</option>
+                            <option value="health">⚕️ Health</option>
+                            <option value="salary">💼 Salary</option>
+                            <option value="other">📦 Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group radio-group">
+                        <label>Type</label>
+                        <div class="radio-buttons">
+                            <label class="radio-label">
+                                <input type="radio" name="type" value="expense" checked>
+                                <span class="radio-custom expense">Expense</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="type" value="income">
+                                <span class="radio-custom income">Income</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">Add Transaction</button>
+                </form>
+            </section>
+
+            <section class="glass-card transactions-section">
+                <div class="section-header">
+                    <h2>Recent Transactions</h2>
+                    <button id="clearAll" class="btn-secondary">Clear All</button>
+                </div>
+                <div id="transactionsList" class="transactions-list">
+                    <div class="empty-state">
+                        <p>No transactions yet</p>
+                        <span>Start by adding your first transaction!</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
